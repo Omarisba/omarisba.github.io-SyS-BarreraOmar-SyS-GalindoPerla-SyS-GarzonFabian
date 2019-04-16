@@ -1,0 +1,621 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Instituto Polit&eacute;cnico Nacional</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-04-16"><meta name="DC.source" content="pagina.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1><b>Instituto Polit&eacute;cnico Nacional</b></h1><!--introduction--><p><b>Unidad Profesional Interdisciplinaria en Ingenier&iacute;a y Tecnolog&iacute;as Avanzadas</b></p><p><tt>Integrantes:</tt></p><div><ul><li>Barrera Angeles Omar Israel</li><li>Galindo Cruz Perla Ariadna</li><li>Garz&oacute;n Miguel Fabi&aacute;n</li></ul></div><p><tt>Pr&aacute;ctica P03: "Se&ntilde;ales e tiempo continuo"</tt></p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Objetivos</a></li><li><a href="#2">Introducci&oacute;n</a></li><li><a href="#4">Desarrollo</a></li><li><a href="#26">Referencias</a></li></ul></div><h2 id="1">Objetivos</h2><div><ul><li>Manipulaci&oacute;n b&aacute;sica de MATLAB</li><li>Gr&aacute;ficas de se&ntilde;ales reales y complejas continuas</li><li>Transformaci&oacute;n de se&ntilde;ales continuas (escalamientos y traslaciones)</li><li>Calculo de energ&iacute;a y potencia de se&ntilde;ales continuas</li></ul></div><h2 id="2">Introducci&oacute;n</h2><p><b>Historia del desarrollo de MATLAB</b></p><pre class="language-matlab">MATLAB <span class="string">es</span> <span class="string">ahora</span> <span class="string">un</span> <span class="string">entorno</span> <span class="string">de</span> <span class="string">computaci&oacute;n</span> <span class="string">t&eacute;cnica</span> <span class="string">con</span> <span class="string">todas</span> <span class="string">las</span> <span class="string">funciones</span>, pero <span class="string">comenz&oacute;</span> <span class="string">como</span> <span class="string">un</span> <span class="string">simple</span>
+<span class="string">"Laboratorio de Matrices"</span>. Tres hombres, JH <span class="string">Wilkinson</span>, George <span class="string">Forsythe</span> <span class="string">y</span> <span class="string">John</span> <span class="string">Todd</span>, desempe&ntilde;aron papeles
+importantes <span class="string">en</span> <span class="string">los</span> <span class="string">or&iacute;genes</span> <span class="string">de</span> <span class="string">MATLAB</span>, hace <span class="string">m&aacute;s</span> <span class="string">de</span> <span class="string">50</span> <span class="string">a&ntilde;os.</span>
+</pre><pre class="language-matlab">MATLAB (Matrix Laboratory, &#8220;laboratorios de matrices&#8221;). Software matem&aacute;tico con <span class="string">entorno</span> <span class="string">de</span> <span class="string">desarrollo</span> <span class="string">integrado</span>
+(IDE) que <span class="string">tiene</span> <span class="string">un</span> <span class="string">lenguaje</span> <span class="string">de</span> <span class="string">programaci&oacute;n</span> <span class="string">propio</span> <span class="string">(Lenguaje M)</span> <span class="string">y</span> <span class="string">es</span> <span class="string">multiplataforma</span> <span class="string">(Unix, Windows y Apple</span>
+Mac <span class="string">Os</span> <span class="string">X). Software de un gran uso en Centros de Investigaci&oacute;n y desarrollo, as&iacute; como en universidades.</span>
+</pre><pre class="language-matlab">En <span class="string">1984</span> <span class="string">surge</span> <span class="string">la</span> <span class="string">primera</span> <span class="string">versi&oacute;n</span>, creado <span class="string">por</span> <span class="string">Cleve</span> <span class="string">Moler</span>, con <span class="string">la</span> <span class="string">idea</span> <span class="string">de</span> <span class="string">usar</span> <span class="string">paquetes</span> <span class="string">de</span> <span class="string">subrutinas</span> <span class="string">escritas</span>
+en <span class="string">Fortran</span> <span class="string">en</span> <span class="string">los</span> <span class="string">cursos</span> <span class="string">de</span> <span class="string">An&aacute;lisis</span> <span class="string">Num&eacute;rico</span> <span class="string">y</span> <span class="string">Algebra</span> <span class="string">Lineal</span>, sin <span class="string">tener</span> <span class="string">una</span> <span class="string">necesidad</span> <span class="string">de</span> <span class="string">programas</span> <span class="string">que</span> <span class="string">usaran</span>
+este <span class="string">lenguaje.</span>
+</pre><pre class="language-matlab">El <span class="string">lenguaje</span> <span class="string">de</span> <span class="string">programaci&oacute;n</span> <span class="string">M</span> <span class="string">se</span> <span class="string">cre&oacute;</span> <span class="string">en</span> <span class="string">1970</span> <span class="string">proporcionando</span> <span class="string">un</span> <span class="string">acceso</span> <span class="string">sencillo</span> <span class="string">al</span> <span class="string">Software</span> <span class="string">de</span> <span class="string">matrices</span>
+LINPACK <span class="string">y</span> <span class="string">EISPACK</span> <span class="string">sin</span> <span class="string">tener</span> <span class="string">que</span> <span class="string">hacer</span> <span class="string">uso</span> <span class="string">del</span> <span class="string">lenguaje</span> <span class="string">Fortran.</span>
+</pre><pre class="language-matlab">Ya <span class="string">en</span> <span class="string">2004</span> <span class="string">se</span> <span class="string">apreciaba</span> <span class="string">que</span> <span class="string">MATLAB</span> <span class="string">era</span> <span class="string">usado</span> <span class="string">por</span> <span class="string">aproximadamente</span> <span class="string">m&aacute;s</span> <span class="string">de</span> <span class="string">un</span> <span class="string">mill&oacute;n</span> <span class="string">de</span> <span class="string">personas</span>, tanto <span class="string">acad&eacute;micos</span> <span class="string">como</span> <span class="string">empresarios.</span>
+</pre><p><b>Alternativas de Software</b></p><div><ul><li><b>GNU Octave</b>:  Puede ser la alternativa m&aacute;s conocida a MATLAB. En desarrollo activo durante casi tres d&eacute;cadas, Octave se  ejecuta en Windows, Mac y Linux, y est&aacute; empaquetado para la mayor&iacute;a de las distribuciones principales; se  esfuerza por una compatibilidad exacta, por lo que muchos de sus proyectos desarrollados para MATLAB pueden  ejecutarse en Octave sin necesidad de modificaciones. Octave tiene licencia GPL, y su c&oacute;digo fuente se puede  encontrar en el sitio FTP de GNU. Enlace: <a href="https://www.gnu.org/software/octave/">https://www.gnu.org/software/octave/</a></li><li><b>Scilab</b>:   Es otra opci&oacute;n de c&oacute;digo abierto para computaci&oacute;n num&eacute;rica que se ejecuta en todas las plataformas principales:   Windows, Mac y Linux incluidos; es quiz&aacute;s la alternativa m&aacute;s conocida fuera de Octave, y (como Octave) es muy   similar a MATLAB en su implementaci&oacute;n, aunque la compatibilidad exacta no es un objetivo de los desarrolladores   del proyecto. Se distribuye como fuente abierta bajo la licencia CeCILL compatible con GPL, y su c&oacute;digo fuente   est&aacute; disponible en su p&aacute;gina oficial. Enlace:   <a href="http://www.scilab.org/">http://www.scilab.org/</a></li><li><b>Sage</b>:   Otro sistema de software de matem&aacute;ticas de c&oacute;digo abierto que podr&iacute;a ser una buena opci&oacute;n para aquellos que   buscan una alternativa de MATLAB. Est&aacute; construido sobre una variedad de conocidas bibliotecas de computaci&oacute;n   cient&iacute;fica basadas en Python, y su propio lenguaje es sint&aacute;cticamente similar a Python. Tiene muchas caracter&iacute;sticas   que incluyen una interfaz de l&iacute;nea de comandos, cuadernos basados en navegador, herramientas para incrustar   f&oacute;rmulas en otros documentos y, por supuesto, muchas bibliotecas matem&aacute;ticas. Est&aacute; disponible bajo una   licencia GPL, y su c&oacute;digo fuente se puede encontrar en el sitio web del   proyecto. Enlace:   <a href="http://www.sagemath.org/index.html">http://www.sagemath.org/index.html</a></li><li><b>Genio</b>:   Dise&ntilde;ado para manejar matem&aacute;ticas avanzadas, Genius se describe a s&iacute; mismo como un &#8220;programa de calculadora   de prop&oacute;sito general similar en algunos aspectos a BC, Matlab, Maple o Mathematica&#8221;. Para usarlo, necesitar&aacute;   escribir expresiones en un lenguaje llamado GEL (abreviaci&oacute;n de &#8220;Genius Extension Language&#8221;), que es muy   similar a los m&eacute;todos usuales de escribir ecuaciones matem&aacute;ticas.   Sistema operativo: Linux, macOs. Enlace:   <a href="http://www.jirka.org/genius.html">http://www.jirka.org/genius.html</a></li><li><b>Salvia</b>:   Un conglomerado de m&aacute;s de 100 aplicaciones de matem&aacute;ticas y programaci&oacute;n de c&oacute;digo abierto, la misi&oacute;n de Sage   es crear &#8220;una alternativa libre y viable de c&oacute;digo abierto a Magma, Maple, Mathematica y Matlab&#8221;. Ahora tambi&eacute;n   viene en una versi&oacute;n basada en la nube llamada CoCalc que tiene planes de servicio gratuitos y pagados.   Sistema operativo: Windows, Linux, macOS. Enlace:   <a href="http://www.sagemath.org/index.html">http://www.sagemath.org/index.html</a></li></ul></div><h2 id="4">Desarrollo</h2><p><b>Ejercicio 1:</b>   Crea una funci&oacute;n que se llame fun1 y reciba dos parametros <img src="pagina_eq08589834809570054062.png" alt="$\omega$"> y <img src="pagina_eq05508344529756732484.png" alt="$a$"> la funci&oacute;n debe regresar la evaluaci&oacute;n   <img src="pagina_eq07687121669753991548.png" alt="$F(\omega)=\frac{a}{a^{2}\cdot \omega^{2}}$"> , esta funci&oacute;n debe trabajar con <img src="pagina_eq16064389548595522758.png" alt="$a\in R$"> y <img src="pagina_eq10208380096770848185.png" alt="$t\in R^{n}$"></p><pre class="codeinput"><span class="comment">%function [F] = fun1(a,w)</span>
+<span class="comment">%F = a./(a^2 + w.^2);</span>
+<span class="comment">%end</span>
+</pre><p><b>Ejercicio 2:</b>   Construya una funci&oacute;n que gr&aacute;fique funciones de $f:R\rightarrow R$en el formato de su elecci&oacute;n y pruebe su   c&oacute;digo mostrando la gr&aacute;fica de <img src="pagina_eq04634431881849194213.png" alt="$F(\omega)$"> vs <img src="pagina_eq08589834809570054062.png" alt="$\omega$"> en el intervalo   <img src="pagina_eq02305279808090304582.png" alt="$[-2 2]$"> para <img src="pagina_eq13016372792947090052.png" alt="$a=1$"> no debe incluir el c&oacute;digo, solo el uso de la   funci&oacute;n para mostrar la gr&aacute;fica.</p><pre class="codeinput">a = 1;
+dw = 1e-6;
+w = -2:dw:2;
+
+F = fun1(a, w);
+grafica(F, w);
+</pre><img vspace="5" hspace="5" src="pagina_01.png" alt=""> <p><b>Ejercicio 3:</b>   Construya una funci&oacute;n que gr&aacute;fique funciones de <img src="pagina_eq12921425074556560241.png" alt="$f:R\rightarrow R^{2}$">   n el formato de su elecci&oacute;n y pruebe su c&oacute;digo mostrando la gr&aacute;fica de   la transformada de Fourier <img src="pagina_eq04634431881849194213.png" alt="$F(\omega)$"> en <img src="pagina_eq07922412360381213694.png" alt="$[-10 10]$"> de la funci&oacute;n   <img src="pagina_eq14669389730423823690.png" alt="$f(t)=e^{-2t}\cdot u(t)$"> , puede utilizar una funci&oacute;n anonima para este   fin, no debe incluir el c&oacute;digo, solo el uso de la funci&oacute;n para   mostrarla gr&aacute;fica. Reporte la gr&aacute;fica de <img src="pagina_eq09478123530129115431.png" alt="$f(t)$"> de <img src="pagina_eq16344284035181491413.png" alt="$[-1 5]$">  (recuerde   que ya tiene una funci&oacute;n para esto). Reporte del espectro de magnitud y   del espectro de fase en <img src="pagina_eq07922412360381213694.png" alt="$[-10 10]$"></p><pre class="codeinput">dt = 1e-6;
+t = -1:dt:5;
+
+figure(1)
+f = @(t) (exp(-2*t).*(t&gt;=0));
+grafica(f(t),t);
+title <span class="string">'f(t)'</span>;
+
+figure(2)
+F = fft(f(t), 1000);
+w =  (-500:499)*0.01;
+grafica(F,w);
+title <span class="string">'F(\omega)'</span>;
+</pre><img vspace="5" hspace="5" src="pagina_02.png" alt=""> <img vspace="5" hspace="5" src="pagina_03.png" alt=""> <p><b>Ejercicio 4</b>:   Realiza las mismas operaciones que Lathi en las secciones M1.1 a M1.4 que se encuentra al final del cap&iacute;tulo 1   y antes de la secci&oacute;n de problemas, cambie los inline por funciones   anonimas.</p><p><b>M1.1</b></p><pre class="codeinput">f = @(t) exp(-t).*cos(2*pi*t);
+
+figure(1);
+t = -2:2;
+plot(t,f(t));
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'f(t)'</span>); grid;
+
+figure(2);
+t = -2:0.01:2;
+plot(t,f(t));
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'f(t)'</span>); grid;
+</pre><img vspace="5" hspace="5" src="pagina_04.png" alt=""> <img vspace="5" hspace="5" src="pagina_05.png" alt=""> <p><b>M1.2</b></p><pre class="codeinput">u = @(t) t&gt;=0;
+
+figure(3)
+t = (-2:2);
+plot (t,u(t));
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'u(t)'</span>);
+
+p = @(t) t&gt;=0 &amp; t&lt;1;
+
+figure(4)
+t = (-1:0.01:2); plot(t,p(t));
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'p(t) = u(t)-u(t-1)'</span>);
+axis ([-1 2 -.1 1.1]);
+</pre><img vspace="5" hspace="5" src="pagina_06.png" alt=""> <img vspace="5" hspace="5" src="pagina_07.png" alt=""> <p><b>M1.3</b></p><pre class="codeinput">g = @(t) exp(-t).*cos(2*pi*t).*(t&gt;=0);
+
+figure(5)
+t = (-2:0.01:2);
+plot(t,g(2*t+1)); xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'g(2t+1)'</span>); grid;
+
+figure(6)
+plot(t,g(-t+1)); xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'g(-t+1)'</span>)'; grid;
+
+figure(7)
+plot(t,g(2*t+1) +g(-t+1)); xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'h(t)'</span>)'; grid;
+</pre><img vspace="5" hspace="5" src="pagina_08.png" alt=""> <img vspace="5" hspace="5" src="pagina_09.png" alt=""> <img vspace="5" hspace="5" src="pagina_10.png" alt=""> <p><b>M1.4</b></p><pre class="codeinput">x = @(t) exp(-t).*((t&gt;=0)&amp;(t&lt;1));
+
+t = (0:0.01:1);
+E_x = sum(x(t).*x(t)*0.01);
+x_squared = @(t) exp(-2*t).*((t&gt;=0)&amp;(t&gt;1));
+E_x2 = quad(x_squared,0,1);
+</pre><p><b>Ejercicio 5</b>:   Resuelve el problema 1.2.2 usando las herramientas del paso anterior.</p><pre class="codeinput">t = -10:1e-3:10;
+x = @(t) -t.*(t&gt;=-4 &amp; t&lt;0) + t.*(t&gt;=0 &amp; t&lt;2);
+</pre><p><img src="pagina_eq02400795542120792991.png" alt="$$x(t)$$"></p><pre class="codeinput">figure(1)
+plot(t, x(t));
+title <span class="string">'x(t)'</span>;
+</pre><img vspace="5" hspace="5" src="pagina_11.png" alt=""> <p><img src="pagina_eq16825804097556663353.png" alt="$$x(t-4)$$"></p><pre class="codeinput"><span class="comment">%(a)</span>
+figure(2)
+plot(t, x(t-4));
+title <span class="string">'x(t-4)'</span>;
+</pre><img vspace="5" hspace="5" src="pagina_12.png" alt=""> <p><img src="pagina_eq12336059230464860239.png" alt="$$x(\frac{t}{1.5})$$"></p><pre class="codeinput"><span class="comment">%(b)</span>
+figure(3)
+plot(t, x(t/1.5));
+title <span class="string">'x(t/1.5)'</span>;
+</pre><img vspace="5" hspace="5" src="pagina_13.png" alt=""> <p><img src="pagina_eq15342580306788649269.png" alt="$$x(-t)$$"></p><pre class="codeinput"><span class="comment">%(c)</span>
+figure(4)
+plot(t, x(-t));
+title <span class="string">'x(-t)'</span>;
+<span class="comment">%(d)</span>
+</pre><img vspace="5" hspace="5" src="pagina_14.png" alt=""> <p><img src="pagina_eq16698825152196115762.png" alt="$$x(2t-4)$$"></p><pre class="codeinput">figure(5)
+plot(t, x(2*t-4));
+title <span class="string">'x(2*t-4)'</span>;
+<span class="comment">%(e)</span>
+</pre><img vspace="5" hspace="5" src="pagina_15.png" alt=""> <p><img src="pagina_eq03416298433645108767.png" alt="$$x(2-t)$$"></p><pre class="codeinput">figure(6)
+plot(t, x(2-t));
+title <span class="string">'x(2-t)'</span>;
+</pre><img vspace="5" hspace="5" src="pagina_16.png" alt=""> <p><b>Ejercicio 6</b>:   Escriba una funci&oacute;n que se llame energia que reciba como argumento una funci&oacute;n (anonima o simbolica) y que   regrese el calculo de la energ&iacute;a, para esto puede resultar &uacute;til investigar las instrucciones int , integral   Se presupone utilizar el c&oacute;digo solo con funciones de energia. Muestre el c&oacute;digo sin ejecutar, y   posteriormente resuelva el problema 1.1.3</p><pre class="codeinput">dt = 1e-3;
+t = 0:dt:7;
+</pre><p><b>(a)</b></p><pre class="codeinput">x = t&gt;=0 &amp; t&lt;=2;
+y = (t&gt;=0 &amp; t&lt;1) - (t&gt;=1 &amp; t&lt;=2);
+
+figure(1)
+subplot(211);
+plot(t,x);
+title <span class="string">'x(t)'</span>;
+xlim([0 3]);
+ylim([0 1.5]);
+subplot(212);
+plot(t,y);
+title <span class="string">'y(t)'</span>;
+xlim([0 3]);
+ylim([-1.5 1.5]);
+
+Emas = energia(x) + energia(y)
+Emenos = energia(x) - energia(y)
+</pre><pre class="codeoutput">
+Emas =
+
+        4002
+
+
+Emenos =
+
+     0
+
+</pre><img vspace="5" hspace="5" src="pagina_17.png" alt=""> <p><b>(b)</b></p><pre class="codeinput">x = sin(t).*(t&gt;=0 &amp; t&lt;= 2*pi);
+y = t&gt;=0 &amp; t&lt;=2*pi;
+
+figure(2)
+subplot(211);
+plot(t,x);
+title <span class="string">'x(t)'</span>;
+ylim([-1.5 1.5]);
+subplot(212);
+plot(t,y);
+title <span class="string">'y(t)'</span>;
+ylim([0 1.5]);
+
+Emas = energia(x) + energia(y)
+Emenos = energia(x) - energia(y)
+</pre><pre class="codeoutput">
+Emas =
+
+   9.4256e+03
+
+
+Emenos =
+
+  -3.1424e+03
+
+</pre><img vspace="5" hspace="5" src="pagina_18.png" alt=""> <p><b>(c)</b></p><pre class="codeinput">x = sin(t).*(t&gt;=0 &amp; t&lt;= pi);
+y = t&gt;=0 &amp; t&lt;=pi;
+
+figure(3)
+subplot(211);
+plot(t,x);
+title <span class="string">'x(t)'</span>;
+xlim([0 4]);
+ylim([-1.5 1.5]);
+subplot(212);
+plot(t,y);
+title <span class="string">'y(t)'</span>;
+xlim([0 4]);
+ylim([0 1.5]);
+
+Emas = energia(x) + energia(y)
+Emenos = energia(x) - energia(y)
+</pre><pre class="codeoutput">
+Emas =
+
+   4.7128e+03
+
+
+Emenos =
+
+  -1.5712e+03
+
+</pre><img vspace="5" hspace="5" src="pagina_19.png" alt=""> <p><b>Ejercicio 7</b>:   Escriba una funci&oacute;n que se llame potencia que reciba como argumento una funci&oacute;n (anonima o simbolica) y que   regrese el calculo de la potencia para esto puede resultar &uacute;til investigar las instrucciones int , integral   Se presupone utilizar el c&oacute;digo solo con funciones de potencia. Muestre el c&oacute;digo sin ejecutar, y posteriormente   resuelva el problema 1.1.4</p><pre class="codeinput">T = 4;
+dt = 1e-6;
+t = -6:dt:6;
+
+f = (t.^3).*(t&lt;-2 &amp; t&lt;2);
+</pre><pre class="codeinput"><span class="comment">%*(a)*</span>
+f_cuadrada = inline(<span class="string">'(-(t.^3).*(t&lt;-2 &amp; t&lt;2)).^2'</span>, <span class="string">'t'</span>);
+P = potencia(f_cuadrada, T)
+</pre><pre class="codeoutput">
+P =
+
+     0
+
+</pre><pre class="codeinput"><span class="comment">%*(b)*</span>
+f_cuadrada = inline(<span class="string">'(2*(t.^3).*(t&lt;-2 &amp; t&lt;2)).^2'</span>, <span class="string">'t'</span>);
+P = potencia(f_cuadrada, T)
+</pre><pre class="codeoutput">
+P =
+
+     0
+
+</pre><h2 id="26">Referencias</h2><pre class="language-matlab">*s/A. (s/A). MATLAB. 12 de <span class="string">abril</span> <span class="string">de</span> <span class="string">2019</span>, de <span class="string">EcuRed</span> <span class="string">Sitio</span> <span class="string">web:</span>
+&lt;https://www.ecured.cu/MATLAB&gt;
+</pre><pre class="language-matlab">*Jason Baker (Red Hat) . (2017). 3 open <span class="string">source</span> <span class="string">alternatives</span> <span class="string">to</span> <span class="string">MATLAB.</span>
+12 de <span class="string">abril</span> <span class="string">de</span> <span class="string">2019</span>, de <span class="string">Opensource.com</span> <span class="string">Sitio</span> <span class="string">web:</span> <span class="string">&lt;https://opensource.com/alternatives/matlab&gt;</span>
+</pre><pre class="language-matlab">*Jaime E. G&oacute;mez H. . (2017). Aplicaciones costosas: 78 alternativas <span class="string">de</span>
+software <span class="string">libre.</span> <span class="string">12</span> <span class="string">de</span> <span class="string">abril</span> <span class="string">de</span> <span class="string">2019</span>,
+de <span class="string">SkinaTech</span> <span class="string">Sitio</span> <span class="string">web:</span> <span class="string">&lt;https://www.skinatech.com/portal/alternativas-de-software-libre/&gt;</span>
+</pre><pre class="language-matlab">*Cleve Moler. (2004). Los or&iacute;genes de <span class="string">MATLAB.</span> <span class="string">12</span> <span class="string">de</span> <span class="string">abril</span> <span class="string">de</span> <span class="string">2019</span>, de
+MathWorks <span class="string">Sitio</span> <span class="string">web:</span>
+&lt;https://la.mathworks.com/company/newsletters/articles/the-origins-of-matlab.html&gt;
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% *Instituto Politécnico Nacional*
+% *Unidad Profesional Interdisciplinaria en Ingeniería y Tecnologías
+% Avanzadas*
+%
+% |Integrantes:|
+% 
+% * Barrera Angeles Omar Israel
+% * Galindo Cruz Perla Ariadna
+% * Garzón Miguel Fabián
+% 
+% |Práctica P03: "Señales e tiempo continuo"|
+%% Objetivos
+% 
+% * Manipulación básica de MATLAB
+% * Gráficas de señales reales y complejas continuas
+% * Transformación de señales continuas (escalamientos y traslaciones)
+% * Calculo de energía y potencia de señales continuas
+% 
+%% Introducción
+% *Historia del desarrollo de MATLAB*
+%
+%   MATLAB es ahora un entorno de computación técnica con todas las funciones, pero comenzó como un simple 
+%   "Laboratorio de Matrices". Tres hombres, JH Wilkinson, George Forsythe y John Todd, desempeñaron papeles 
+%   importantes en los orígenes de MATLAB, hace más de 50 años.
+%
+%   MATLAB (Matrix Laboratory, “laboratorios de matrices”). Software matemático con entorno de desarrollo integrado 
+%   (IDE) que tiene un lenguaje de programación propio (Lenguaje M) y es multiplataforma (Unix, Windows y Apple 
+%   Mac Os X). Software de un gran uso en Centros de Investigación y desarrollo, así como en universidades.
+%
+%   En 1984 surge la primera versión, creado por Cleve Moler, con la idea de usar paquetes de subrutinas escritas 
+%   en Fortran en los cursos de Análisis Numérico y Algebra Lineal, sin tener una necesidad de programas que usaran 
+%   este lenguaje.
+%
+%   El lenguaje de programación M se creó en 1970 proporcionando un acceso sencillo al Software de matrices 
+%   LINPACK y EISPACK sin tener que hacer uso del lenguaje Fortran.
+%
+%   Ya en 2004 se apreciaba que MATLAB era usado por aproximadamente más de un millón de personas, tanto académicos como empresarios.
+%
+%%
+% *Alternativas de Software*  
+% 
+% * *GNU Octave*:
+%  Puede ser la alternativa más conocida a MATLAB. En desarrollo activo durante casi tres décadas, Octave se 
+%  ejecuta en Windows, Mac y Linux, y está empaquetado para la mayoría de las distribuciones principales; se 
+%  esfuerza por una compatibilidad exacta, por lo que muchos de sus proyectos desarrollados para MATLAB pueden 
+%  ejecutarse en Octave sin necesidad de modificaciones. Octave tiene licencia GPL, y su código fuente se puede 
+%  encontrar en el sitio FTP de GNU. Enlace: 
+% <https://www.gnu.org/software/octave/>
+% * *Scilab*:
+%   Es otra opción de código abierto para computación numérica que se ejecuta en todas las plataformas principales:
+%   Windows, Mac y Linux incluidos; es quizás la alternativa más conocida fuera de Octave, y (como Octave) es muy 
+%   similar a MATLAB en su implementación, aunque la compatibilidad exacta no es un objetivo de los desarrolladores 
+%   del proyecto. Se distribuye como fuente abierta bajo la licencia CeCILL compatible con GPL, y su código fuente 
+%   está disponible en su página oficial. Enlace: 
+%   <http://www.scilab.org/>
+% * *Sage*:
+%   Otro sistema de software de matemáticas de código abierto que podría ser una buena opción para aquellos que 
+%   buscan una alternativa de MATLAB. Está construido sobre una variedad de conocidas bibliotecas de computación 
+%   científica basadas en Python, y su propio lenguaje es sintácticamente similar a Python. Tiene muchas características 
+%   que incluyen una interfaz de línea de comandos, cuadernos basados en navegador, herramientas para incrustar 
+%   fórmulas en otros documentos y, por supuesto, muchas bibliotecas matemáticas. Está disponible bajo una 
+%   licencia GPL, y su código fuente se puede encontrar en el sitio web del
+%   proyecto. Enlace: 
+%   <http://www.sagemath.org/index.html>
+% * *Genio*:
+%   Diseñado para manejar matemáticas avanzadas, Genius se describe a sí mismo como un “programa de calculadora 
+%   de propósito general similar en algunos aspectos a BC, Matlab, Maple o Mathematica”. Para usarlo, necesitará 
+%   escribir expresiones en un lenguaje llamado GEL (abreviación de “Genius Extension Language”), que es muy 
+%   similar a los métodos usuales de escribir ecuaciones matemáticas.
+%   Sistema operativo: Linux, macOs. Enlace: 
+%   <http://www.jirka.org/genius.html>
+% * *Salvia*:
+%   Un conglomerado de más de 100 aplicaciones de matemáticas y programación de código abierto, la misión de Sage 
+%   es crear “una alternativa libre y viable de código abierto a Magma, Maple, Mathematica y Matlab”. Ahora también 
+%   viene en una versión basada en la nube llamada CoCalc que tiene planes de servicio gratuitos y pagados. 
+%   Sistema operativo: Windows, Linux, macOS. Enlace: 
+%   <http://www.sagemath.org/index.html>
+%
+%% Desarrollo
+% *Ejercicio 1:*
+%   Crea una función que se llame fun1 y reciba dos parametros $\omega$ y $a$ la función debe regresar la evaluación
+%   $F(\omega)=\frac{a}{a^{2}\cdot \omega^{2}}$ , esta función debe trabajar con $a\in R$ y $t\in R^{n}$
+%function [F] = fun1(a,w)
+%F = a./(a^2 + w.^2);
+%end
+%%
+%
+% *Ejercicio 2:*
+%   Construya una función que gráfique funciones de $f:R\rightarrow R$en el formato de su elección y pruebe su 
+%   código mostrando la gráfica de $F(\omega)$ vs $\omega$ en el intervalo
+%   $[-2 2]$ para $a=1$ no debe incluir el código, solo el uso de la
+%   función para mostrar la gráfica.
+
+a = 1;
+dw = 1e-6;
+w = -2:dw:2;
+
+F = fun1(a, w);
+grafica(F, w);
+%%
+% *Ejercicio 3:*
+%   Construya una función que gráfique funciones de $f:R\rightarrow R^{2}$
+%   n el formato de su elección y pruebe su código mostrando la gráfica de
+%   la transformada de Fourier $F(\omega)$ en $[-10 10]$ de la función
+%   $f(t)=e^{-2t}\cdot u(t)$ , puede utilizar una función anonima para este
+%   fin, no debe incluir el código, solo el uso de la función para
+%   mostrarla gráfica. Reporte la gráfica de $f(t)$ de $[-1 5]$  (recuerde
+%   que ya tiene una función para esto). Reporte del espectro de magnitud y
+%   del espectro de fase en $[-10 10]$
+dt = 1e-6;
+t = -1:dt:5;
+
+figure(1)
+f = @(t) (exp(-2*t).*(t>=0));
+grafica(f(t),t);
+title 'f(t)';
+
+figure(2)
+F = fft(f(t), 1000);
+w =  (-500:499)*0.01;
+grafica(F,w);
+title 'F(\omega)';
+%%
+% *Ejercicio 4*:
+%   Realiza las mismas operaciones que Lathi en las secciones M1.1 a M1.4 que se encuentra al final del capítulo 1
+%   y antes de la sección de problemas, cambie los inline por funciones
+%   anonimas.
+%%
+% *M1.1*
+
+f = @(t) exp(-t).*cos(2*pi*t);
+
+figure(1);
+t = -2:2;
+plot(t,f(t));
+xlabel('t'); ylabel('f(t)'); grid;
+
+figure(2);
+t = -2:0.01:2;
+plot(t,f(t));
+xlabel('t'); ylabel('f(t)'); grid;
+
+%%
+% *M1.2*
+
+u = @(t) t>=0;
+
+figure(3)
+t = (-2:2);
+plot (t,u(t));
+xlabel('t'); ylabel('u(t)');
+
+p = @(t) t>=0 & t<1;
+
+figure(4)
+t = (-1:0.01:2); plot(t,p(t));
+xlabel('t'); ylabel('p(t) = u(t)-u(t-1)');
+axis ([-1 2 -.1 1.1]);
+
+%%
+% *M1.3*
+
+g = @(t) exp(-t).*cos(2*pi*t).*(t>=0);
+
+figure(5)
+t = (-2:0.01:2);
+plot(t,g(2*t+1)); xlabel('t'); ylabel('g(2t+1)'); grid;
+
+figure(6)
+plot(t,g(-t+1)); xlabel('t'); ylabel('g(-t+1)')'; grid;
+
+figure(7)
+plot(t,g(2*t+1) +g(-t+1)); xlabel('t'); ylabel('h(t)')'; grid;
+
+%%
+% *M1.4*
+
+x = @(t) exp(-t).*((t>=0)&(t<1));
+
+t = (0:0.01:1);
+E_x = sum(x(t).*x(t)*0.01);
+x_squared = @(t) exp(-2*t).*((t>=0)&(t>1));
+E_x2 = quad(x_squared,0,1);
+%%
+% *Ejercicio 5*:
+%   Resuelve el problema 1.2.2 usando las herramientas del paso anterior.
+t = -10:1e-3:10;
+x = @(t) -t.*(t>=-4 & t<0) + t.*(t>=0 & t<2);
+
+%%
+% $$x(t)$$
+figure(1)
+plot(t, x(t));
+title 'x(t)';
+%%
+% $$x(t-4)$$
+
+%(a)
+figure(2)
+plot(t, x(t-4));
+title 'x(t-4)';
+%%
+% $$x(\frac{t}{1.5})$$
+%(b)
+figure(3)
+plot(t, x(t/1.5));
+title 'x(t/1.5)';
+%%
+% $$x(-t)$$
+%(c)
+figure(4)
+plot(t, x(-t));
+title 'x(-t)';
+%(d)
+%%
+% $$x(2t-4)$$
+figure(5)
+plot(t, x(2*t-4));
+title 'x(2*t-4)';
+%(e)
+%%
+% $$x(2-t)$$
+figure(6)
+plot(t, x(2-t));
+title 'x(2-t)';
+%%
+% *Ejercicio 6*:
+%   Escriba una función que se llame energia que reciba como argumento una función (anonima o simbolica) y que 
+%   regrese el calculo de la energía, para esto puede resultar útil investigar las instrucciones int , integral 
+%   Se presupone utilizar el código solo con funciones de energia. Muestre el código sin ejecutar, y 
+%   posteriormente resuelva el problema 1.1.3
+dt = 1e-3;
+t = 0:dt:7;
+
+%%
+% *(a)*
+x = t>=0 & t<=2;
+y = (t>=0 & t<1) - (t>=1 & t<=2);
+
+figure(1)
+subplot(211);
+plot(t,x);
+title 'x(t)';
+xlim([0 3]);
+ylim([0 1.5]);
+subplot(212);
+plot(t,y);
+title 'y(t)';
+xlim([0 3]);
+ylim([-1.5 1.5]);
+
+Emas = energia(x) + energia(y)
+Emenos = energia(x) - energia(y)
+
+%%
+% *(b)*
+x = sin(t).*(t>=0 & t<= 2*pi);
+y = t>=0 & t<=2*pi;
+
+figure(2)
+subplot(211);
+plot(t,x);
+title 'x(t)';
+ylim([-1.5 1.5]);
+subplot(212);
+plot(t,y);
+title 'y(t)';
+ylim([0 1.5]);
+
+Emas = energia(x) + energia(y)
+Emenos = energia(x) - energia(y)
+
+%%
+% *(c)*
+x = sin(t).*(t>=0 & t<= pi);
+y = t>=0 & t<=pi;
+
+figure(3)
+subplot(211);
+plot(t,x);
+title 'x(t)';
+xlim([0 4]);
+ylim([-1.5 1.5]);
+subplot(212);
+plot(t,y);
+title 'y(t)';
+xlim([0 4]);
+ylim([0 1.5]);
+
+Emas = energia(x) + energia(y)
+Emenos = energia(x) - energia(y)
+
+%%
+% *Ejercicio 7*:
+%   Escriba una función que se llame potencia que reciba como argumento una función (anonima o simbolica) y que 
+%   regrese el calculo de la potencia para esto puede resultar útil investigar las instrucciones int , integral 
+%   Se presupone utilizar el código solo con funciones de potencia. Muestre el código sin ejecutar, y posteriormente 
+%   resuelva el problema 1.1.4
+T = 4;
+dt = 1e-6;
+t = -6:dt:6;
+
+f = (t.^3).*(t<-2 & t<2);
+
+%%
+%*(a)*
+f_cuadrada = inline('(-(t.^3).*(t<-2 & t<2)).^2', 't');
+P = potencia(f_cuadrada, T)
+
+%%
+%*(b)*
+f_cuadrada = inline('(2*(t.^3).*(t<-2 & t<2)).^2', 't');
+P = potencia(f_cuadrada, T)
+
+%% Referencias
+%
+%   *s/A. (s/A). MATLAB. 12 de abril de 2019, de EcuRed Sitio web:
+%   <https://www.ecured.cu/MATLAB>
+%
+%   *Jason Baker (Red Hat) . (2017). 3 open source alternatives to MATLAB.
+%   12 de abril de 2019, de Opensource.com Sitio web: <https://opensource.com/alternatives/matlab>
+%
+%   *Jaime E. Gómez H. . (2017). Aplicaciones costosas: 78 alternativas de
+%   software libre. 12 de abril de 2019, 
+%   de SkinaTech Sitio web: <https://www.skinatech.com/portal/alternativas-de-software-libre/>
+%
+%   *Cleve Moler. (2004). Los orígenes de MATLAB. 12 de abril de 2019, de
+%   MathWorks Sitio web:
+%   <https://la.mathworks.com/company/newsletters/articles/the-origins-of-matlab.html>
+%
+
+
+
+
+
+
+
+##### SOURCE END #####
+--></body></html>
